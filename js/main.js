@@ -353,4 +353,18 @@ hash = function(h){
   }
 }
 
-
+// Adicione este código ao seu arquivo js/main.js
+$('.popup-video').magnificPopup({
+  type: 'inline',
+  midClick: true, // Permite abrir com o botão do meio do mouse
+  callbacks: {
+    open: function() {
+      // Pausa o vídeo quando o popup é fechado
+      this.content.find('video')[0].play();
+    },
+    close: function() {
+      // Pausa o vídeo quando o popup é fechado
+      this.content.find('video')[0].pause();
+    }
+  }
+});
